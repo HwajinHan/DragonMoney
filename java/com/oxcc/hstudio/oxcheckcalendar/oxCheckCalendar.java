@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
+import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 public class oxCheckCalendar extends AppCompatActivity {
 
@@ -29,12 +30,22 @@ public class oxCheckCalendar extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        CalendarView calendarView;
-        calendarView = (CalendarView)findViewById(R.id.calendarView);
-        TextView textView;
-        textView = (TextView)findViewById(R.id.textView);
-        textView.setText("화진아 수영가야지");
 
+        // R
+        CalendarView calendarView;
+        TextView textView;
+
+        calendarView = (CalendarView)findViewById(R.id.calendarView);
+        textView = (TextView)findViewById(R.id.textView);
+
+        textView.setText("종우니 운동가야지");
+        calendarView.setOnDateChangeListener(new OnDateChangeListener() {
+
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(getApplicationContext(), ""+dayOfMonth, Toast.LENGTH_LONG).show();// TODO Auto-generated method stub
+
+            }
+        });
 
     }
 
