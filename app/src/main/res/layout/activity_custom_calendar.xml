@@ -22,6 +22,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/btn_pre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
@@ -329,11 +335,5 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/btn_pre"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:text="btn_pre"
-        tools:layout_editor_absoluteX="8dp" />
 
 </android.support.constraint.ConstraintLayout>
