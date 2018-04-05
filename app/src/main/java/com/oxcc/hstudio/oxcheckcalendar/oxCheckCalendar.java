@@ -36,9 +36,9 @@ public class oxCheckCalendar extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Button preButton;
+        Button btn_pre;
         // R
-        TextView title, col0, col1, col2, col3, col4, col5, col6, btn_pre;
+        TextView title, col0, col1, col2, col3, col4, col5, col6;
 
         title = (TextView)findViewById(R.id.title);
         col0 = (TextView)findViewById(R.id.row0_col1);
@@ -48,7 +48,7 @@ public class oxCheckCalendar extends AppCompatActivity {
         col4 = (TextView)findViewById(R.id.row0_col5);
         col5 = (TextView)findViewById(R.id.row0_col6);
         col6 = (TextView)findViewById(R.id.row0_col7);
-        btn_pre=(TextView)findViewById(R.id.btn_pre);
+        btn_pre=(Button)findViewById(R.id.btn_pre);
 
         // initialize
         title.setText("종우니 운동가야지");
