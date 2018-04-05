@@ -20,7 +20,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/activity_custom_calendar" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_custom_calendar" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -50,5 +52,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <Button
+        android:id="@+id/btn_pre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="i made this :)"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|center" />
 
 </android.support.design.widget.CoordinatorLayout>
