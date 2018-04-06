@@ -38,8 +38,9 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         });
         Button button;
         // R
-        TextView title, col0, col1, col2, col3, col4, col5, col6;
-        TextView date[][] = new TextView[6][7];
+        TextView title;
+        dateTextView col0, col1, col2, col3, col4, col5, col6;
+        dateTextView date[][] = new dateTextView[6][7];
         String btnName;
         int resID;
 
@@ -47,42 +48,41 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
             for (int j = 0; j < 7; j++) {
                 btnName = "row" + (i + 1) + "_col" + (j + 1);
                 resID = getResources().getIdentifier(btnName, "id", getPackageName());
-                date[i][j] = (TextView)findViewById(resID);
+                date[i][j] = (dateTextView)findViewById(resID);
                 date[i][j].setOnClickListener(this);
+                date[i][j].setExampleColor(Color.BLUE);
+                date[i][j].setExampleDimension(24);
             }
         }
         title = (TextView)findViewById(R.id.title);
 
         button=(Button)findViewById(R.id.btn_pre);
 
-        col0 = (TextView)findViewById(R.id.row0_col1);
-        col1 = (TextView)findViewById(R.id.row0_col2);
-        col2 = (TextView)findViewById(R.id.row0_col3);
-        col3 = (TextView)findViewById(R.id.row0_col4);
-        col4 = (TextView)findViewById(R.id.row0_col5);
-        col5 = (TextView)findViewById(R.id.row0_col6);
-        col6 = (TextView)findViewById(R.id.row0_col7);
+        col0 = (dateTextView)findViewById(R.id.row0_col1);
+        col1 = (dateTextView)findViewById(R.id.row0_col2);
+        col2 = (dateTextView)findViewById(R.id.row0_col3);
+        col3 = (dateTextView)findViewById(R.id.row0_col4);
+        col4 = (dateTextView)findViewById(R.id.row0_col5);
+        col5 = (dateTextView)findViewById(R.id.row0_col6);
+        col6 = (dateTextView)findViewById(R.id.row0_col7);
 
 
         // initialize
         title.setText("종우니 운동가야지");
 
-        col0.setText("일요일");
-        col1.setText("울요일");
-        col2.setText("화요일");
-        col3.setText("수요일");
-        col4.setText("목요일");
-        col5.setText("금요일");
-        col6.setText("일요일");
+        col0.setExampleString("일요일");
+        col1.setExampleString("울요일");
+        col2.setExampleString("화요일");
+        col3.setExampleString("수요일");
+        col4.setExampleString("목요일");
+        col5.setExampleString("금요일");
+        col6.setExampleString("일요일");
         button.setText("i made this");
 
         Date curDate = new Date();
         System.out.print(curDate);
 
 
-    }
-    public void setColor(TextView tv) {
-        tv.setBackgroundColor(Color.RED);
     }
 
     @Override
