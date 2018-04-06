@@ -19,7 +19,7 @@ import java.lang.Object;
 import java.util.Date;
 
 
-public class oxCheckCalendar extends AppCompatActivity implements View.OnClickListener {
+public class oxCheckCalendar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,22 +39,8 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         Button button;
         // R
         TextView title, col0, col1, col2, col3, col4, col5, col6;
-        TextView date[][] = new TextView[6][7];
-        String btnName;
-        int resID;
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 7; j++) {
-                btnName = "row" + (i + 1) + "_col" + (j + 1);
-                resID = getResources().getIdentifier(btnName, "id", getPackageName());
-                date[i][j] = (TextView)findViewById(resID);
-                date[i][j].setOnClickListener(this);
-            }
-        }
         title = (TextView)findViewById(R.id.title);
-
-        button=(Button)findViewById(R.id.btn_pre);
-
         col0 = (TextView)findViewById(R.id.row0_col1);
         col1 = (TextView)findViewById(R.id.row0_col2);
         col2 = (TextView)findViewById(R.id.row0_col3);
@@ -62,7 +48,7 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         col4 = (TextView)findViewById(R.id.row0_col5);
         col5 = (TextView)findViewById(R.id.row0_col6);
         col6 = (TextView)findViewById(R.id.row0_col7);
-
+        button=(Button)findViewById(R.id.btn_pre);
 
         // initialize
         title.setText("종우니 운동가야지");
@@ -80,23 +66,6 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         System.out.print(curDate);
 
 
-    }
-    public void setColor(TextView tv) {
-        tv.setBackgroundColor(Color.RED);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.row1_col1:
-            case R.id.row1_col2:
-            case R.id.row1_col3:
-            case R.id.row1_col4:
-            case R.id.row1_col5:
-            case R.id.row1_col6:
-            case R.id.row1_col7:
-                v.setBackgroundColor(Color.BLUE);
-        }
     }
 
     @Override
