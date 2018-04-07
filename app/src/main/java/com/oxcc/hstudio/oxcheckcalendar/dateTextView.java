@@ -22,6 +22,8 @@ public class dateTextView extends View {
     private TextPaint mTextPaint;
     private float mTextWidth;
     private float mTextHeight;
+    // custom
+    private int status = 0; // 0 : none
 
     public dateTextView(Context context) {
         super(context);
@@ -36,6 +38,26 @@ public class dateTextView extends View {
     public dateTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs, defStyle);
+    }
+
+    public void checkAndSetStatus() {
+        switch (status) {
+            case 0:
+                setBackgroundColor(Color.GREEN);
+                setStatus(1);
+                break;
+            case 1:
+                setBackgroundColor(Color.YELLOW);
+                setStatus(2);
+                break;
+            case 2:
+                setBackgroundColor(Color.WHITE);
+                setStatus(0);
+                break;
+        }
+    }
+    public void setStatus(int value) {
+        status = value;
     }
 
     private void init(AttributeSet attrs, int defStyle) {

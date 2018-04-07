@@ -44,39 +44,41 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         String btnName;
         int resID;
 
-        for (int i = 0; i < 5; i++) {
+        // 달력 상단
+        title = (TextView)findViewById(R.id.title);
+        button=(Button)findViewById(R.id.btn_pre);
+
+        // 달력 내부
+        for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
-                btnName = "row" + (i + 1) + "_col" + (j + 1);
+                btnName = "row" + i + "_col" + (j + 1);
                 resID = getResources().getIdentifier(btnName, "id", getPackageName());
                 date[i][j] = (dateTextView)findViewById(resID);
                 date[i][j].setOnClickListener(this);
-                date[i][j].setExampleColor(Color.BLUE);
-                date[i][j].setExampleDimension(24);
+                if (i == 0) {
+                    date[i][j].setExampleColor(Color.WHITE);
+                    date[i][j].setBackgroundColor(Color.RED);
+                    date[i][j].setExampleDimension(30);
+
+                } else {
+                    date[i][j].setExampleColor(Color.BLUE);
+                    date[i][j].setExampleDimension(24);
+                }
             }
         }
-        title = (TextView)findViewById(R.id.title);
-
-        button=(Button)findViewById(R.id.btn_pre);
-
-        col0 = (dateTextView)findViewById(R.id.row0_col1);
-        col1 = (dateTextView)findViewById(R.id.row0_col2);
-        col2 = (dateTextView)findViewById(R.id.row0_col3);
-        col3 = (dateTextView)findViewById(R.id.row0_col4);
-        col4 = (dateTextView)findViewById(R.id.row0_col5);
-        col5 = (dateTextView)findViewById(R.id.row0_col6);
-        col6 = (dateTextView)findViewById(R.id.row0_col7);
+        date[0][0].setExampleString("일요일");
+        date[0][1].setExampleString("울요일");
+        date[0][2].setExampleString("화요일");
+        date[0][3].setExampleString("수요일");
+        date[0][4].setExampleString("목요일");
+        date[0][5].setExampleString("금요일");
+        date[0][6].setExampleString("일요일");
 
 
         // initialize
         title.setText("종우니 운동가야지");
 
-        col0.setExampleString("일요일");
-        col1.setExampleString("울요일");
-        col2.setExampleString("화요일");
-        col3.setExampleString("수요일");
-        col4.setExampleString("목요일");
-        col5.setExampleString("금요일");
-        col6.setExampleString("일요일");
+
         button.setText("i made this");
 
         Date curDate = new Date();
@@ -87,7 +89,8 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        dateTextView view = (dateTextView)v;
+        switch (view.getId()) {
             case R.id.row1_col1:
             case R.id.row1_col2:
             case R.id.row1_col3:
@@ -95,7 +98,8 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
             case R.id.row1_col5:
             case R.id.row1_col6:
             case R.id.row1_col7:
-                v.setBackgroundColor(Color.BLUE);
+            default:
+                view.checkAndSetStatus();
         }
     }
 
