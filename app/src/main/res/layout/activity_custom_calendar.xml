@@ -6,280 +6,316 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/month"
+        android:id="@+id/mainView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_margin="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/btn_pre"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Button" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911">
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="158dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="0"
+            android:gravity="top|center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="이전" />
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="다음" />
+
+        </LinearLayout>
 
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+
+
 
             <TableRow
                 android:id="@+id/r_0th"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:exampleString="DAY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleColor="#000"
                     app:exampleDimension="14sp"
+                    app:exampleString="DAY"
                     tools:background="#f00" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row0_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/r_1th"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleColor="#000"
                     app:exampleDimension="24sp"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row1_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/r_2nd"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row2_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/r_3rd"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row3_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/r_4th"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row4_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="#080"
                     app:exampleString="DAY" />
             </TableRow>
@@ -287,52 +323,126 @@
             <TableRow
                 android:id="@+id/r_5th"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     app:exampleString="DAY" />
 
                 <com.oxcc.hstudio.oxcheckcalendar.dateTextView
                     android:id="@+id/row5_col7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="#f00"
+                    app:exampleString="DAY" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/r_6th"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col6"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:exampleString="DAY" />
+
+                <com.oxcc.hstudio.oxcheckcalendar.dateTextView
+                    android:id="@+id/row6_col7"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="#f00"
                     app:exampleString="DAY" />
             </TableRow>
         </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/mainView"
+            tools:layout_editor_absoluteX="8dp">
+
+            <Button
+                android:id="@+id/btn_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="오늘" />
+
+            <TextView
+                android:id="@+id/debugtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+        </LinearLayout>
 
     </LinearLayout>
 
