@@ -1,7 +1,7 @@
 package com.oxcc.hstudio.oxcheckcalendar;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +46,7 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
 
         int days = 1;
         int startDays = (new Date(curYear, curMonth, days).getDay());
-        int endDay = getDaysInMonth(curYear, curMonth);
+        int endDay = getDaysInMonth(curYear, curMonth+1);
 
                 //remove later
         TextView debug = (TextView)findViewById(R.id.debugtext);
@@ -74,7 +74,7 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
 
                 } else {
                     date[i][j].setExampleColor(Color.BLUE);
-                    date[i][j].setExampleDimension(40);
+                    date[i][j].setExampleDimension(100);
                     if (i == 1) {
                         if (j < startDays) {
                             //skip
@@ -120,9 +120,9 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
 
         int days = 1;
         int startDays = (new Date(year, month, days)).getDay();
-        int endDay = getDaysInMonth(year, month);
+        int endDay = getDaysInMonth(year, month+1);
 
-        textMonth.setText((curMonth + 1) + "월");
+        textMonth.setText((curMonth + 1) + "월" + (curYear + 1900) + "년");
 
         for (int i = 1; i < 7; i++) {
             for (int j = 0; j < 7; j++) {
@@ -133,7 +133,6 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
                 if (i == 1) {
                     if (j < startDays) {
                         date[i][j].setExampleString("");
-                        //skip
                     } else {
                         date[i][j].setExampleString((String.format("%d", days)));
                         days++;
@@ -142,6 +141,8 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
                     if (days <= endDay) {
                         date[i][j].setExampleString((String.format("%d", days)));
                         days++;
+                    } else {
+                        date[i][j].setExampleString("");
                     }
                 }
                 date[i][j].invalidate();
@@ -177,6 +178,7 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
                 setMonth(true);
                 setMonthView(curYear, curMonth);
                 break;
+
             case R.id.row0_col1:
             case R.id.row0_col2:
             case R.id.row0_col3:
@@ -206,10 +208,14 @@ public class oxCheckCalendar extends AppCompatActivity implements View.OnClickLi
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_settings) {
             return true;
         }
-
+        if (id == R.id.menu_manageSubject){
+            finish();
+            Intent intent = new Intent(this, manageObject.class);//oxCheckCalendar.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

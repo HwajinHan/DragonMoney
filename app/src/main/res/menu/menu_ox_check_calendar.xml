@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.oxcc.hstudio.oxcheckcalendar.oxCheckCalendar">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_manageSubject"
+        android:title="목표관리" />
+    <item
+        android:id="@+id/menu_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
